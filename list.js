@@ -1,59 +1,58 @@
-//focus input field
+
 $(document).ready(function () {
+//focus input field
     $('#f1').focus(function () {
         $(this).css('border', '5px solid red');
     });
-});
 
-//todolist::
-//style li list
-$(document).ready(function () {
-    $('#list').css('border', '10px dotted red');
-    $('#list').css('background-color', 'yellow');
+    //todolist::
+    //style li list
+    $('#list').css('border', '10px dotted yellow');
+    $('#list').css('background-color', 'black');
+    $('#list').css('color', 'yellow');
     $('#list').css('width', 'auto');
     $('#list').css('height', 'auto');
+
+       //style list1:
+       $('#list1').css('border', '10px dotted yellow');
+       $('#list1').css('background-color', 'pink');
+       $('#list1').css('color', 'yellow');
+       $('#list1').css('width', 'auto');
+       $('#list1').css('height', 'auto');
 });
 
-// $(document).ready(function(){
-//        //style list1:
-//        $('#list').css('border', '10px dotted yellow');
-//        $('#list').css('background-color', 'red');
-//        $('#list').css('width', 'auto');
-//        $('#list').css('height', 'auto');
-// });
-
 // show value in lists that we add from list: in last
-$(document).ready(function () {
+$(document).ready(function() {
+
     $('#add').click(function () {
         let v = $('#f1').val();
         $('#list').append(`<li>${v}</li>`);
     });
-});
 
-// line through code:
-$(document).ready(function () {
+    // line through code:
+
     $('#list').on('click', 'li', function () {
+
         $(this).css('text-decoration', 'line-through');
 
         $(this).toggleClass('completed');
-        //    let x =   $(this).text();
-        //    console.log(x);
-
-        // delete selected item:
-        $('#del').click(function () {
-            let r = $('#list li.completed').remove();
-            // $(`#list li ${x}`).remove();
-
+        
             // show into another list deleted item:
+            let r = $('#list li.completed').text();
             $(this).show();
             $('#list1').append(`<li>${r}</li>`);
+    
+        // delete selected item:
+        $('#del').click(function () {
+
+            $('#list li.completed').remove();
+
         });
-
-
-
-
     });
 });
+
+
+
 
 // // show value in lists that we add from list: in start
 // $(document).ready(function(){
