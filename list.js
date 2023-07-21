@@ -19,12 +19,17 @@ $(document).ready(function () {
        $('#list1').css('color', 'yellow');
        $('#list1').css('width', 'auto');
        $('#list1').css('height', 'auto');
-});
+       //style ul li:
+    // //    $('#list ,li').css('height', 'auto');
+    //    $('#list ,li').css('background-color', 'yellow');
+    //    $('#list ,li').css('color', 'black');
+    //    $('#listl ,i').css('border-radius', '10px');
+}); 
 
 // show value in lists that we add from list: in last
 $(document).ready(function() {
 
-    $('#add').click(function () {
+    $('#f1').change(function () {
         let v = $('#f1').val();
         $('#list').append(`<li>${v}</li>`);
     });
